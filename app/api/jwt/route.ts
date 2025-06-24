@@ -14,7 +14,7 @@ function getDecryptedKey(passphrase: string): string {
 
     try {
         return execSync(`openssl pkcs8 -in ${keyPath} -passin pass:${passphrase} -nocrypt`, { encoding: 'utf8' });
-    } catch (error) {
+    } catch {
         try {
             return execSync(`openssl rsa -in ${keyPath} -passin pass:${passphrase}`, { encoding: 'utf8' });
         }
