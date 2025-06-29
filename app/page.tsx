@@ -1,7 +1,7 @@
 "use client"
 
 import { AgentApiState, AgentRequestBuildParams, CORTEX_ANALYST_TOOL, CORTEX_SEARCH_TOOL, DATA_TO_CHART_TOOL, SQL_EXEC_TOOL, useAgentAPIQuery } from "@/lib/agent-api";
-import { useAccessToken } from "@/lib/auth";
+// import { useAccessToken } from "@/lib/auth";
 import { Messages } from "./components/messages";
 import { ChatInput } from "./components/input";
 import { ChatHeader } from "./components/chat-header";
