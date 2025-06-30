@@ -28,7 +28,7 @@ export function buildStandardRequestParams(params: AgentRequestBuildParams) {
         'Content-Type': 'application/json',
         'X-Snowflake-Authorization-Token-Type': 'KEYPAIR_JWT',
         'Authorization': `Bearer ${authToken}`,
-        'sf-ml-enabled-cross-regions': 'ANY_REGION,AWS_US',
+        // 'sf-ml-enabled-cross-regions': 'ANY_REGION,AWS_US',
     }
 
     const body = {

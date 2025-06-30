@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-
+import axios from "axios";
 export interface Token {
     token: string;
     expiresAt: number;
@@ -12,8 +12,8 @@ export function useAccessToken() {
 
     React.useEffect(() => {
         const fetchToken = async () => {
-            const response = await fetch("/api/jwt");
-            const { token: newToken } = await response.json();
+            const response = await axios.get("/api/jwt");
+            const { token: newToken } = await response.data;
             setToken(newToken);
         };
 
@@ -27,8 +27,8 @@ export function useAccessToken() {
             const currentTime = Date.now() / 1000;
             if (currentTime < token.expiresAt) return;
 
-            const response = await fetch("/api/jwt");
-            const { token: newToken } = await response.json();
+            const response = await axios.get("/api/jwt");
+            const { token: newToken } = await response.data;
             setToken(newToken);
         }, 60000);
 
